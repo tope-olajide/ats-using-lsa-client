@@ -13,7 +13,7 @@ import FormControl from "react-bootstrap/FormControl"
 import axios from 'axios'
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = ({  }) => {
+const App = ({}) => {
   const [isLoading, setIsloading] = useState(false);
   const [textValue, setTextValue] = useState("");
   const [result, setResult] = useState("");
@@ -30,7 +30,16 @@ const App = ({  }) => {
       reader.readAsText(textFile)
   };
   if (isLoading) {
-    return <h1>loading</h1>;
+
+    return <>
+          <Navbar bg="dark" variant="dark">
+        <Nav className="mr-auto ml-auto">
+          <Navbar.Brand href="#home">
+            Automatic Text Summarization using LSA
+          </Navbar.Brand>
+        </Nav>
+      </Navbar><div className='loader-container'><div className="loader"></div>{/* <h1 className="loading">Loading</h1> */}</div>
+      </>;
   }
 const addInputToState =(event)=>{
   setTextValue(event.target.value)
