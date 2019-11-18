@@ -40,7 +40,7 @@ const tokenize = async() => {
   setIsloading(true)
   try {
   
-  const response = await axios.post('http://127.0.0.1:5000/tokenize-document', { textDocument: textValue});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/tokenize-document', { textDocument: textValue});
   setResult(response.data)
   setIsloading(false)
   }
@@ -52,7 +52,7 @@ const tokenize = async() => {
 const removeStopWords = async() => {
   setIsloading(true)
   try {
-  const response = await axios.post('http://127.0.0.1:5000/remove-stopword', { textDocument: textValue});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/remove-stopword', { textDocument: textValue});
   setResult(response.data)
   console.log(response.data)
   setIsloading(false)
@@ -65,7 +65,7 @@ const removeStopWords = async() => {
 const stemDocument = async() => {
   setIsloading(true)
   try {
-  const response = await axios.post('http://127.0.0.1:5000/stem-document', { textDocument: textValue});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/stem-document', { textDocument: textValue});
   setResult(response.data)
   console.log(response.data)
   setIsloading(false)
@@ -78,7 +78,7 @@ const stemDocument = async() => {
 const generateTfIdf = async() => {
   setIsloading(true)
   try {
-  const response = await axios.post('http://127.0.0.1:5000/tf-idf', { textDocument: textValue});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/tf-idf', { textDocument: textValue});
   var pretty = JSON.stringify(response.data, undefined, 2);
   setResult(pretty)
   console.log(response.data)
@@ -92,7 +92,7 @@ const generateTfIdf = async() => {
 const generateSVD = async() => {
   setIsloading(true)
   try {
-  const response = await axios.post('http://127.0.0.1:5000/generate-svd', { textDocument: textValue});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/generate-svd', { textDocument: textValue});
   var pretty = JSON.stringify(response.data, undefined, 2);
   setResult(pretty)
   console.log(response.data)
@@ -110,7 +110,7 @@ const addSentenceNumberToState =(event)=>{
 const summarizeText =async()=>{
   setIsloading(true)
   try {
-  const response = await axios.post('http://127.0.0.1:5000/lsa-summarization', { textDocument: textValue,numberOfSentence: sentenceNumber});
+  const response = await axios.post('https://automatic-text-summarization.herokuapp.com/lsa-summarization', { textDocument: textValue,numberOfSentence: sentenceNumber});
   var pretty = JSON.stringify(response.data, undefined, 2);
   setResult(pretty)
   console.log(response.data)
