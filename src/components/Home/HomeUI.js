@@ -205,7 +205,7 @@ const App = ({}) => {
                 onChange={addSentenceNumberToState}
               />
             </InputGroup>
-            <ButtonToolbar className="p-2 border my-2">
+            {/* <ButtonToolbar className="p-2 border my-2">
               <Button className="m-2" variant="primary" onClick={tokenize}>
                 Tokenize
               </Button>
@@ -221,7 +221,7 @@ const App = ({}) => {
               <Button className="m-2" variant="primary" onClick={generateSVD}>
                 SVD Matrix
               </Button>
-            </ButtonToolbar>
+            </ButtonToolbar> */}
           </Col>
           <Col className="mt-5" sm={5}>
             <Card>
