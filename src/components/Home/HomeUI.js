@@ -201,7 +201,7 @@ const App = ({}) => {
                 aria-describedby="basic-addon1"
                 type="number"
                 min={1}
-                placeholder="Enter No. of sentence"
+                placeholder="Enter No. of sentences"
                 onChange={addSentenceNumberToState}
               />
             </InputGroup>
@@ -226,7 +226,7 @@ const App = ({}) => {
           <Col className="mt-5" sm={5}>
             <Card>
               <Card.Header>
-                <Card.Title className="text-center">Results</Card.Title>
+                <Card.Title className="text-center">Summary</Card.Title>
               </Card.Header>
               <Form.Control
                 style={{ overflowY: "scroll" }}
